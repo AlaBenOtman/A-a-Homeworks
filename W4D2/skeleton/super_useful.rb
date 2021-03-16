@@ -37,8 +37,14 @@ end
 # PHASE 4
 class BestFriend
   def initialize(name, yrs_known, fav_pastime)
+    raise "please enter correct name" if name.length <= 0
+    raise "please enter correct fav_pastime" if fav_pastime.length <= 0
     @name = name
-    @yrs_known = yrs_known
+    if yrs_known >= 5
+      @yrs_known = yrs_known
+    else
+      raise "We can't be best friends if we don't know each other for at least 5 years"
+    end
     @fav_pastime = fav_pastime
   end
 
